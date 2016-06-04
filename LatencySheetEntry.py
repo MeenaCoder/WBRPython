@@ -72,3 +72,16 @@ class LatencySheetEntry(object):
 	@endDate.setter
 	def endDate(self, endDate):
 		self._endDate = endDate
+		
+		
+		
+	# Print object	
+	def toString(self):
+		return "Latency Sheet Entry [ AppId: " +self.appId +
+		", AppName: " + self.appName +
+		", StartDate: " + self.startDate +
+		", EndDate: " + self.endDate + 
+		", Latency: " + self.latency + " ]"
+		
+		
+	
