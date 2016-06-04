@@ -77,11 +77,15 @@ class LatencySheetEntry(object):
 		
 	# Print object	
 	def toString(self):
-		return "Latency Sheet Entry [ AppId: " +self.appId +
-		", AppName: " + self.appName +
-		", StartDate: " + self.startDate +
-		", EndDate: " + self.endDate + 
-		", Latency: " + self.latency + " ]"
+		s = []
+		s.append('Latency Sheet Entry [ AppId: ' + self.appId)
+		s.append(', AppName: ' + self.appName)
+		s.append(', StartDate: ' + self.startDate)
+		s.append(', EndDate: ' + self.endDate)
+		s.append(', Latency: ' + self.latency)
+		s.append( ' ]')
+		
+		return ''.join(s)
 		
 		
 	

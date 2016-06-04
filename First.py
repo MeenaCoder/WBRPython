@@ -4,6 +4,7 @@ import LatencySheetEntry
 
 resultDictionary = {}
 latencySheetCache =[]
+latencySheetPath = '/Users/vrajori/Documents/Meena/DataStore/Week22/LatencySheet.csv'
 
 feature_list = [
 'NO_OF_SUBMISSIONS',
@@ -74,18 +75,18 @@ def loadLatencySheet(fileName):
 			i = j.split(',')
 			if i[0]!='APP_ID':
 				print i
-				cacheEntry = LatencySheetEntry.LatencySheetEntry(i[0],i[1],i[2],i[3],i[4],i[5],i[6])
-				latencySheetCache.append(cacheEntry)
+				if(len(i) == 7):
+					cacheEntry = LatencySheetEntry.LatencySheetEntry(i[0],i[1],i[2],i[3],i[4],i[5],i[6])
+					latencySheetCache.append(cacheEntry)
 			
 			
 	print latencySheetCache
 		
 	
-loadLatencySheet('C:\Users\meemeena@amazon.com\Desktop\WBR_TOOL\DataSource\Week22\LatencySheet.csv')
+loadLatencySheet(latencySheetPath)
 
 for i in latencySheetCache:
-	print i.latency
-	print i.appName
+	print i.toString()
 # evaluateNoSubmissionProcessed('C:\Users\meemeena@amazon.com\Desktop\WBR_TOOL\DataSource\Week22\TestingSharepoint.csv')
 # print resultDictionary
 	
